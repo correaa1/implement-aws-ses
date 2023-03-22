@@ -1,5 +1,5 @@
 import AWS from"aws-sdk"
-import { nanoid } from "nanoid"
+
 import env from "dotenv"
 
 env.config();
@@ -14,7 +14,7 @@ const SES = new AWS.SES(awsConfig)
 
 const sendEmail = async () => {
      const email = process.env.FROM_EMAIL
-     const shortCode =  nanoid(6).toUpperCase();
+     
 
 
      try {
@@ -32,7 +32,7 @@ const sendEmail = async () => {
                     Body:{
                          Html:{
                               Charset: "UTF-8",
-                              Data: `<h1>seu código de verificação é ${shortCode}</h1>`
+                              Data: `<h1>seu código de verificação é </h1>`
                          },
                     },
                },
@@ -54,4 +54,4 @@ const sendEmail = async () => {
 
 }
 
-export default sendEmail;
+export default sendEmail();
