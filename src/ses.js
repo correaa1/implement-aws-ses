@@ -27,12 +27,12 @@ const sendEmail = async () => {
                },
                Message:{
                     Subject:{
-                         Data: ` código de verificação `
+                         Data: ` Ganja recebida, strain: Orange Punch `
                     },
                     Body:{
                          Html:{
                               Charset: "UTF-8",
-                              Data: `<h1>seu código de verificação é </h1>`
+                              Data: `<h1>Deu certo </h1>`
                          },
                     },
                },

@@ -1,6 +1,6 @@
 const express = require("express");
 const serverless = require("serverless-http");
-import sendEmail from "../src/ses.js";
+import sendEmail from "./ses.js";
 
 // Create an instance of the Express app
 export const app = express();
@@ -17,9 +17,7 @@ router.get("/",  (req, res) => {
 });
 
 // Use the router to handle requests to the `/.netlify/functions/api` path
-app.use(`/.netlify/functions/api`, router);
+app.use(`/.netlify/functions/main`, router);
 
 // Export the app and the serverless function
 export const handler = serverless(app);
-
-            
